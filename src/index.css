@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap');
+
+:root {
+  /* Colores Corporativos */
+  --primary-blue: #0A3D73;
+  --secondary-blue: #2A6DB3;
+  --accent-blue: #00A6E8;
+  --dark-bg: #031526;
+  
+  /* Colores Neutrales */
+  --white: #FFFFFF;
+  --light-gray: #F4F7F9;
+  --text-primary: #1A202C;
+  --text-secondary: #4A5568;
+  
+  /* Utilidades */
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  
+  /* Tipografía */
+  --font-main: 'Inter', sans-serif;
+  --font-display: 'Montserrat', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--dark-bg);
+  color: #FFFFFF;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--font-main);
+  border: none;
+  background: none;
+}
+
+/* Barra de Desplazamiento Personalizada */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dark-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--secondary-blue);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-blue);
+}
+
+/* Contenedor de Sección */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5%;
+  width: 100%;
+}
+
+.section-padding {
+  padding: 100px 0;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #FFFFFF;
+  margin-bottom: 3rem;
+  position: relative;
+  display: block;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background-color: var(--accent-blue);
+  border-radius: 2px;
+}

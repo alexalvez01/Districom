@@ -1,0 +1,154 @@
+.contact-section {
+  background-color: transparent; /* Hereda el fondo oscuro del body */
+}
+
+.contact-section .container {
+  max-width: 1400px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 30px;
+  align-items: stretch;
+}
+
+.contact-info-container {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 35px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+}
+
+
+.contact-info-container h3 {
+  color: #FFFFFF;
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+}
+
+.info-container .info-card h3 {
+  color: #FFFFFF;
+  margin-bottom: 25px;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mt-2 { margin-top: 15px; }
+
+/* Filas de contacto */
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.contact-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.05rem;
+  padding: 14px 10px;
+  border-radius: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.contact-row:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #FFFFFF;
+  transform: translateX(5px);
+}
+
+.contact-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: var(--white);
+  flex-shrink: 0;
+}
+
+.contact-icon.location,
+.contact-icon.instagram,
+.contact-icon.email {
+  background: var(--secondary-blue);
+}
+
+/* Botón de WhatsApp */
+.escribenos-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  padding: 10px 0px;
+  background: #25D366;
+  color: var(--white);
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin-top: auto;
+  box-shadow: 0 5px 15px rgba(37, 211, 102, 0.2);
+}
+
+.escribenos-btn:hover {
+  background: #1da851;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+}
+
+.info-card {
+  margin-top: 10px;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+}
+
+.info-card h3 {
+  color: #FFFFFF;
+  margin-bottom: 10px;
+  font-size: 1.15rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.info-card p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.map-card {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.map-card iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+@media screen and (max-width: 968px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
