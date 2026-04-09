@@ -41,4 +41,3 @@ Para ejecutar el proyecto localmente:
 1. Instala las dependencias: `npm install`
 2. Inicia el servidor de desarrollo: `npm run dev`
 3. Construye para producción: `npm run build`
-
