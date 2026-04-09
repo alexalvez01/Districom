@@ -122,7 +122,7 @@
   font-size: 1rem;
   line-height: 1.5;
   margin: 15px 0 0 0;
-  opacity: 0; /* Oculto por defecto en Desktop */
+  opacity: 0; 
   max-height: 0;
   overflow: hidden;
   transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
@@ -166,7 +166,7 @@
   }
   .services-grid {
     flex-wrap: wrap;
-    gap: 15px; /* Un poco de gap en mobile para separar las cards */
+    gap: 15px; 
   }
   .service-card {
     flex: 1 1 45%; 
@@ -177,7 +177,7 @@
   .service-description {
     width: 100%;
     min-width: auto;
-    opacity: 1; /* Siempre visible en mobile/tablet */
+    opacity: 1; 
     max-height: 200px;
   }
 }
@@ -191,7 +191,7 @@
   }
   .service-card {
     flex: 1 1 100%;
-    height: auto; /* Altura automática para que entre el texto */
+    height: auto; 
     min-height: 300px;
     padding: 30px 20px;
   }

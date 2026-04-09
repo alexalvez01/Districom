@@ -61,7 +61,7 @@ button {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--dark-bg);
+  background: #0a1a2b; /* Azul profundo con contraste para la guía del scroll */
 }
 
 ::-webkit-scrollbar-thumb {
