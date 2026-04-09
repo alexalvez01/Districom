@@ -42,6 +42,4 @@ Para ejecutar el proyecto localmente:
 2. Inicia el servidor de desarrollo: `npm run dev`
 3. Construye para producción: `npm run build`
 
----
 
-Diseñado con ❤️ para elevar la presencia digital de **Districom**.
