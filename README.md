@@ -17,11 +17,11 @@ Este proyecto ha sido diseñado para ofrecer una experiencia de usuario premium,
 
 ## Tecnologías Utilizadas
 
-- **React:** Biblioteca principal para la interfaz de usuario.
-- **Framer Motion:** Motor de animaciones de alto rendimiento para gestos y transiciones suaves.
-- **Vite:** Herramienta de construcción ultrarrápida para el desarrollo frontend.
-- **CSS3:** Estilos puros con variables personalizadas y animaciones optimizadas para GPU.
-- **React Icons / Lucide:** Set de iconos modernos y consistentes.
+- **React** 
+- **Framer Motion** 
+- **Vite** 
+- **CSS** 
+- **React Icons / Lucide** 
 
 ## Estructura del Proyecto
 
