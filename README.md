@@ -1,6 +1,6 @@
 # Districom Landing Page
 
-Bienvenido al repositorio oficial de la nueva landing page de **Districom**, una empresa líder en comercialización de productos informáticos, tecnología y servicios técnicos integrales.
+Repositorio de la landing page de **Districom**, una empresa líder en comercialización de productos informáticos, tecnología y servicios técnicos integrales.
 
 Este proyecto ha sido diseñado para ofrecer una experiencia de usuario premium, moderna y altamente interactiva, reflejando la innovación y confianza que Districom brinda a sus clientes.
 
