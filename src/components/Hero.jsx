@@ -252,7 +252,7 @@ const Hero = () => {
                 </div>
               </TiltCard>
 
-              {/* Tarjeta 2: Ubicación (Alta) - Enlace interactivo */}
+              {/* Tarjeta 2: Ubicación  - Enlace interactivo */}
               <TiltCard
                 className="bento-card card-diagnosis card-interactive"
                 variants={cardVariants}

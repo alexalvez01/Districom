@@ -37,8 +37,8 @@ html {
 
 body {
   font-family: var(--font-main);
-  background-color: var(--dark-bg);
-  color: #FFFFFF;
+  background-color: var(--white);
+  color: var(--text-primary);
   line-height: 1.6;
   overflow-x: hidden;
 }
@@ -88,7 +88,7 @@ button {
 .section-title {
   text-align: center;
   font-size: 2.5rem;
-  color: #FFFFFF;
+  color: var(--primary-blue);
   margin-bottom: 3rem;
   position: relative;
   display: block;

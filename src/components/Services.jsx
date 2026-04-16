@@ -59,7 +59,7 @@ const itemVariants = {
 const Services = () => {
   return (
     <section id="services" className="services-section section-padding">
-      <div className="container-wide">
+      <div className="services-container-wide">
         <motion.h2 
           className="section-title text-white"
           initial={{ opacity: 0, y: 20 }}
