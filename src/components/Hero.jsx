@@ -113,15 +113,25 @@ const Hero = () => {
 
   const googleMapsUrl = "https://www.google.com/maps/dir/?api=1&destination=Bv.+Hipolito+Yrigoyen+1058,+Concepcion+del+Uruguay,+Entre+Rios";
 
-  // Definición de variantes de animación
-  const cardVariants = {
-    hidden: { y: 30, opacity: 0.01 },
-    visible: { y: 0, opacity: 1, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } }
+  // Definición de variantes de animación dinámicas
+  const fadeUp = {
+    hidden: { y: 50, opacity: 0 },
+    visible: { y: 0, opacity: 1, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
   };
 
-  const textItemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: { y: 0, opacity: 1, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] } }
+  const fadeLeft = {
+    hidden: { x: -50, opacity: 0 },
+    visible: { x: 0, opacity: 1, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
+  };
+
+  const fadeRight = {
+    hidden: { x: 50, opacity: 0 },
+    visible: { x: 0, opacity: 1, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
+  };
+
+  const fadeDown = {
+    hidden: { y: -50, opacity: 0 },
+    visible: { y: 0, opacity: 1, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
   };
 
   return (
@@ -131,7 +141,7 @@ const Hero = () => {
     >
       {/* Carrusel de fondo dinámico */}
       <div className="hero-bg-slider">
-        <AnimatePresence>
+        <AnimatePresence initial={false}>
           <motion.div
             key={currentImg}
             initial={{ opacity: 0 }}
@@ -151,10 +161,7 @@ const Hero = () => {
       {/* Superposición de claridad y Glassmorphism */}
       <div className="hero-overlay"></div>
 
-      <div className="hero-glow-container">
-        <div className="glow glow-1"></div>
-        <div className="glow glow-2"></div>
-      </div>
+
 
       <div className="container-wide">
         <div className="hero-grid">
@@ -172,7 +179,7 @@ const Hero = () => {
             initial="hidden"
             animate="visible"
           >
-            <motion.div variants={textItemVariants} className="hero-badge">
+            <motion.div variants={fadeDown} className="hero-badge">
               <span className="badge-pulse">
                 <span className="pulse-ping"></span>
                 <span className="pulse-dot"></span>
@@ -180,7 +187,7 @@ const Hero = () => {
               <span className="badge-text">Atención local especializada</span>
             </motion.div>
 
-            <motion.div variants={textItemVariants} className="hero-title-group">
+            <motion.div variants={fadeLeft} className="hero-title-group">
               <h1 className="hero-brand-title">
                 <span className="part-1">Distri</span><span className="part-2">Com</span>
               </h1>
@@ -190,11 +197,11 @@ const Hero = () => {
               </p>
             </motion.div>
 
-            <motion.p variants={textItemVariants} className="hero-description">
+            <motion.p variants={fadeLeft} className="hero-description">
               Expertos en tecnología con servicios integrales para que nunca dejes de avanzar. No solo vendemos dispositivos, acompañamos tu crecimiento.
             </motion.p>
 
-            <motion.div variants={textItemVariants} className="hero-actions">
+            <motion.div variants={fadeUp} className="hero-actions">
               <a href="#services" className="btn-primary">
                 Ver más
                 <LuArrowRight className="btn-icon" />
@@ -207,7 +214,7 @@ const Hero = () => {
             </motion.div>
 
             {/* Indicadores de confianza */}
-            <motion.div variants={textItemVariants} className="hero-trust">
+            <motion.div variants={fadeUp} className="hero-trust">
               <div className="trust-item">
                 <LuShieldCheck className="trust-icon" />
                 <span>Calidad Garantizada</span>
@@ -237,7 +244,7 @@ const Hero = () => {
               {/* Tarjeta 1: Trayectoria (Larga) */}
               <TiltCard
                 className="bento-card card-stock col-span-2"
-                variants={cardVariants}
+                variants={fadeDown}
               >
                 <div className="card-pattern"></div>
                 <div className="card-left">
@@ -255,12 +262,13 @@ const Hero = () => {
               {/* Tarjeta 2: Ubicación  - Enlace interactivo */}
               <TiltCard
                 className="bento-card card-diagnosis card-interactive"
-                variants={cardVariants}
+                variants={fadeRight}
               >
                 <a
                   href={googleMapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Ver ubicación en Google Maps"
                   style={{ textDecoration: 'none', color: 'inherit', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%', transformStyle: "preserve-3d" }}
                 >
                   <div className="card-icon-small">
@@ -277,7 +285,7 @@ const Hero = () => {
               {/* Tarjeta 3: Prueba Social (Formato grande) */}
               <TiltCard
                 className="bento-card card-rating"
-                variants={cardVariants}
+                variants={fadeUp}
               >
                 <div className="card-label">Opiniones de clientes</div>
                 <div className="rating-content">
@@ -298,10 +306,11 @@ const Hero = () => {
               {/* Tarjeta 4: Soporte (Pequeña) - Estado en tiempo real */}
               <TiltCard
                 className="bento-card card-mini card-targets card-interactive"
-                variants={cardVariants}
+                variants={fadeRight}
               >
                 <a
                   href="#contact"
+                  aria-label="Ir a sección de contacto para atención al cliente"
                   style={{ textDecoration: 'none', color: 'inherit', display: 'flex', flexDirection: 'column', justifyContent: 'center', height: '100%', transformStyle: "preserve-3d" }}
                 >
                   <LuUsers className="bg-icon" />

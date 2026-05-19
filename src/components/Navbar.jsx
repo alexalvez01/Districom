@@ -22,7 +22,7 @@ const Navbar = () => {
     e.preventDefault();
     closeMenu();
     window.location.hash = hash;
-    const section = document.getElementById('about');
+    const section = document.getElementById(hash);
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
     }
@@ -35,22 +35,28 @@ const Navbar = () => {
             <img src="/districomlogo.webp" alt="Districom Logo" />
           </a>
           
-          <div className={`menu-icon ${menuOpen ? 'open' : ''}`} onClick={toggleMenu}>
+          <button 
+            className={`menu-icon ${menuOpen ? 'open' : ''}`} 
+            onClick={toggleMenu}
+            aria-expanded={menuOpen}
+            aria-label={menuOpen ? "Cerrar menú principal" : "Abrir menú principal"}
+            aria-controls="main-menu"
+          >
             {menuOpen ? (
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <line x1="18" y1="6" x2="6" y2="18"></line>
                 <line x1="6" y1="6" x2="18" y2="18"></line>
               </svg>
             ) : (
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <line x1="3" y1="12" x2="21" y2="12"></line>
                 <line x1="3" y1="6" x2="21" y2="6"></line>
                 <line x1="3" y1="18" x2="21" y2="18"></line>
               </svg>
             )}
-          </div>
+          </button>
 
-          <ul className={`nav-menu ${menuOpen ? 'active' : ''}`}>
+          <ul id="main-menu" className={`nav-menu ${menuOpen ? 'active' : ''}`}>
             <li className="nav-item">
               <a href="#home" className="nav-links" onClick={closeMenu}>Inicio</a>
             </li>

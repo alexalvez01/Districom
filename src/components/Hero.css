@@ -7,7 +7,7 @@
   overflow: hidden;
   padding-top: 120px;
   padding-bottom: 60px;
-  background-color: var(--dark-bg);
+  background-color: var(--bg-color);
 }
 
 /* Controles del Slider de Fondo */
@@ -16,7 +16,7 @@
   inset: 0;
   z-index: 0;
   overflow: hidden;
-  background-color: var(--dark-bg);
+  background-color: var(--bg-color);
 }
 
 .hero-slide {
@@ -26,11 +26,11 @@
   height: 100%;
 }
 
-/* Superposición de Claridad */
+/* Superposición Oscura Sutil */
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(3, 21, 38, 0.7) 0%, rgba(3, 21, 38, 0.3) 50%, transparent 100%);
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.3) 100%);
   z-index: 1;
 }
 
@@ -116,20 +116,12 @@
   height: 100%;
   background-color: var(--accent-blue);
   border-radius: 50%;
-  animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
-  opacity: 0.75;
-}
-
-.pulse-dot {
-  position: relative;
-  width: 8px;
-  height: 8px;
-  background-color: var(--accent-blue);
-  border-radius: 50%;
 }
 
 @keyframes ping {
-  75%, 100% {
+
+  75%,
+  100% {
     transform: scale(2.5);
     opacity: 0;
   }
@@ -139,9 +131,9 @@
   font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
-  user-select: none; 
+  user-select: none;
   letter-spacing: 1px;
-  color: var(--secondary-blue);
+  color: var(--accent-blue);
 }
 
 /* Jerarquía de Marca */
@@ -163,7 +155,7 @@
 }
 
 .hero-brand-title .part-2 {
-  color: #FFFFFF;
+  color: var(--white);
   background-color: var(--secondary-blue);
   padding: 4px 15px;
   margin-left: 5px;
@@ -178,21 +170,20 @@
   font-weight: 600;
   line-height: 1.3;
   color: #FFFFFF;
-  opacity: 1;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 .gradient-text {
   color: var(--accent-blue);
-  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.3));
 }
 
 .hero-description {
   font-size: 1.2rem;
   color: #FFFFFF;
+  opacity: 0.9;
   max-width: 550px;
   line-height: 1.7;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 .hero-actions {
@@ -201,7 +192,8 @@
   margin-top: 0.5rem;
 }
 
-.btn-primary, .btn-secondary {
+.btn-primary,
+.btn-secondary {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -209,7 +201,7 @@
   border-radius: 100px;
   font-weight: 600;
   font-size: 1rem;
-  transition: all 0.3s ease;
+  transition: all var(--transition-normal);
 }
 
 .btn-primary {
@@ -225,17 +217,16 @@
 }
 
 .btn-secondary {
-  background: rgba(0, 0, 0, 0.45);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: #FFFFFF;
-  backdrop-filter: blur(10px);
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
 }
 
 .btn-secondary:hover {
-  background: rgba(0, 0, 0, 0.6);
-  border-color: var(--accent-blue);
+  background: var(--bg-color);
+  border-color: var(--border-color);
   transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--shadow-md);
 }
 
 .btn-icon {
@@ -246,7 +237,7 @@
   display: flex;
   gap: 3rem;
   margin-top: 1rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--text-secondary);
 }
 
 .trust-item {
@@ -278,14 +269,14 @@
 
 .bento-card {
   position: relative;
-  background: rgba(0, 0, 0, 0.45); 
-  border: 1px solid rgba(255, 255, 255, 0.15); 
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 32px;
   backdrop-filter: blur(25px);
   padding: 30px;
   overflow: visible;
-  user-select: none; 
-  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+  transition: all var(--transition-normal);
   display: flex;
   flex-direction: column;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
@@ -300,8 +291,13 @@
 }
 
 /* Reglas Específicas de Tarjetas */
-.col-span-2 { grid-column: span 2; }
-.row-span-2 { grid-row: span 2; }
+.col-span-2 {
+  grid-column: span 2;
+}
+
+.row-span-2 {
+  grid-row: span 2;
+}
 
 .card-stock {
   flex-direction: row;
@@ -366,7 +362,7 @@
   color: #FFFFFF;
 }
 
-/* Tarjeta de Diagnóstico (Alta) */
+/* Tarjeta de Diagnóstico */
 .card-diagnosis {
   grid-row: span 2;
   justify-content: space-between;
@@ -457,10 +453,21 @@
   opacity: 0.6;
 }
 
-.rating-star { color: #FFD700; filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.4)); font-size: 1.1rem; }
-.rating-star-half { color: #FFD700; opacity: 0.25; font-size: 1.1rem; }
+.rating-star {
+  color: #FFD700;
+  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.4));
+  font-size: 1.1rem;
+}
 
-.accent-blue { color: var(--accent-blue); }
+.rating-star-half {
+  color: #FFD700;
+  opacity: 0.25;
+  font-size: 1.1rem;
+}
+
+.accent-blue {
+  color: var(--accent-blue);
+}
 
 .bg-icon {
   position: absolute;
@@ -523,15 +530,31 @@
 }
 
 @keyframes pulse-green {
-  0% { box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.7); }
-  70% { box-shadow: 0 0 0 10px rgba(0, 255, 136, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(0, 255, 136, 0); }
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.7);
+  }
+
+  70% {
+    box-shadow: 0 0 0 10px rgba(0, 255, 136, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 255, 136, 0);
+  }
 }
 
 @keyframes pulse-red {
-  0% { box-shadow: 0 0 0 0 rgba(255, 77, 77, 0.7); }
-  70% { box-shadow: 0 0 0 10px rgba(255, 77, 77, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(255, 77, 77, 0); }
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 77, 77, 0.7);
+  }
+
+  70% {
+    box-shadow: 0 0 0 10px rgba(255, 77, 77, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 77, 77, 0);
+  }
 }
 
 
@@ -559,7 +582,8 @@
     flex-wrap: wrap;
   }
 
-  .btn-primary, .btn-secondary {
+  .btn-primary,
+  .btn-secondary {
     padding: 12px 20px;
     font-size: 0.95rem;
     white-space: nowrap;
@@ -582,7 +606,8 @@
     gap: 12px;
   }
 
-  .btn-primary, .btn-secondary {
+  .btn-primary,
+  .btn-secondary {
     width: 100%;
     justify-content: center;
     padding: 16px;
@@ -606,7 +631,7 @@
     min-height: 140px;
     border-radius: 24px;
     padding: 24px;
-    backdrop-filter: blur(15px); 
+    backdrop-filter: blur(15px);
   }
 
   .val-number {
